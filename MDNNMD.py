@@ -348,13 +348,13 @@ dnn_md1.END_LEARNING_RATE = 0.00001
 dnn_md1.IS_PRINT_INFO = "F"
 label1, cls = dnn_md1.code_lables(d_class, dnn_md1.MT_CLASS_TASK1)
 # 
-if os.path.exists(dnn_md1.Kfold):
-    kf1 = pickle.load(open(dnn_md1.Kfold,"rb"))
-    print("successfully loading already existing kfold index!")
-else:
-    kf1 = StratifiedKFold(label1, n_folds=dnn_md1.K)
-    pickle.dump(kf1, open(dnn_md1.Kfold, "wb"))
-    print("successfully generating kfold index!")
+# if os.path.exists(dnn_md1.Kfold):
+#     kf1 = pickle.load(open(dnn_md1.Kfold,"rb"))
+#     print("successfully loading already existing kfold index!")
+# else:
+kf1 = StratifiedKFold(label1, n_folds=dnn_md1.K)
+pickle.dump(kf1, open(dnn_md1.Kfold, "wb"))
+print("successfully generating kfold index!")
 #class_predict_fcn1,p_valid_all1,cls_valid_all1 = dnn_md1.train(kf1,d_matrix, d_class, cls, ut)
 
 
