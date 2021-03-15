@@ -6,8 +6,6 @@
 #numpy should add first
 import numpy
 import numpy as np
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
 import random, os, math
 import  pickle
 from utils import Utils
@@ -15,7 +13,9 @@ from sklearn.model_selection import StratifiedKFold
 import configparser as ConfigParser
 from numpy import float32
 from sklearn.model_selection import train_test_split
+import tensorflow.compat.v1 as tf 
 
+tf.disable_v2_behaviour()
 class MDNNMD():
     def __init__(self):
         self.name = 'MDNNMD'
